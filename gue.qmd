@@ -85,7 +85,7 @@ leaflet(width = "100%", height = "500px") %>%
   # )
 ```
 
-*Figure 1. Interactive map containing information on proportional urban ecosystem cover for all urban areas with more than 250,000 residents in 2015. Please click each location for more information and a link to a detailed report*
+*Figure 1. Interactive map containing information on percentage urban ecosystem cover for all urban areas with more than 250,000 residents in 2015. Please click each location for more information and a link to a detailed report*
 
 ### Methods
 
@@ -105,7 +105,7 @@ Each raster dataset consists of 5 layers. In order, these layers are; the land c
 
 ![](images/methods-lowres.png){fig-alt="Maps for Bandung, Indonesia" width="1200"} *Figure 2. Example map layers for Bandung, Indonesia.*
 
-### Dataset information
+Information on each of the layers contained in the dataset is listed below;
 
 #### Land cover types
 

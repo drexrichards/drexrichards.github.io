@@ -14,6 +14,13 @@ website:
         text: Publications
       - href: gue.qmd
         text: Global urban ecosystems
+    left: 
+      - icon: github
+        href: https://github.com/drexrichards
+      - icon: twitter
+        href: https://twitter.com/DanRRichards
+      - icon: linkedin
+        href: https://www.linkedin.com/in/danrichardsaps/
 format:
   html:
     theme: litera
