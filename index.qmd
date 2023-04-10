@@ -1,11 +1,12 @@
 ---
-title: "drexrichards.github.io"
+title: "Dan Richards"
+sidebar: false
 ---
 
-This is a Quarto website.
+::: column-margin
+![](images/dan-tall3.jpg)
+:::
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Hi, I'm an ecologist interested in understanding the varied contributions that nature makes to people. My research has looked at urban ecosystems, mangrove forests, and temperate wetlands across local, national, and global scales. I use field measurements, remote sensing, and new types of data to quantify the relationships between ecosystems and people.
 
-```{r}
-1 + 1
-```
+I'm currently based at [Manaaki Whenua - Landcare Research](https://www.landcareresearch.co.nz/about-us/our-people/dan-richards) in Aotearoa New Zealand.

@@ -1,17 +1,22 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "drexrichards.github.io"
+  title: ""
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - href: research.qmd
+        text: Research
+      - href: 'https://scholar.google.co.uk/citations?user=BxTPh1kAAAAJ&hl=en'
+        text: Publications
+      - href: gue.qmd
+        text: Global urban ecosystems
 format:
   html:
-    theme: cosmo
+    theme: litera
     css: styles.css
     toc: true
 

@@ -1,0 +1,31 @@
+---
+title: "Research"
+---
+
+My research uses interdisciplinary approaches to analyse the two-way relationship between nature and people.
+
+### Urban ecosystems
+
+Urban ecosystems include parks, gardens, and remnant patches of natural vegetation. These ecosystems provide many critical benefits to society, including cooling the environment, cleaning the air, and providing spaces for recreation and relaxation. My research has looked at a broad range of these ecosystem services, using a mix of ecology, social sciences, and data analysis.
+
+I'm interested in looking at urban ecosystems at a range of spatial scales. To inform urban planning and design, it is often useful to have high-resolution information on specific cities. For example, please take a look at some of my work in [Singapore](https://drexrichards.github.io/singapore) and [Ōtautahi - Christchurch](http://mwlr.nz/ncp-christchurch). It can also be useful to [zoom out](https://drexrichards.github.io/gue), and understand how cities around the world vary in their ecosystem types, covers, and configurations.
+
+![](images/dalle-sg.png){fig-alt="sg-ai" fig-align="center"}
+
+### Mangroves
+
+Mangrove forests are a unique coastal ecosystem found mainly in the tropics. Mangroves have dense carbon stocks and can protect coastlines against natural hazards. However, they have been heavily deforested, often due to demands for fish, palm oil, and other products.
+
+My work has analysed mangrove forest ecosystem services and pressures at individual sites, the hotspot region of Southeast Asia, and globally.
+
+![](images/globalmangrovetrimmed.jpg){fig-alt="Global mangrove carbon stock change" fig-align="center"}
+
+*Global quantification of mangrove carbon stocks over 20 years. From [Richards et al. 2020](https://www.nature.com/articles/s41467-020-18118-z)*
+
+### New techniques
+
+Quantifying the benefits of nature requires innovative approaches. My work has developed new ways of extracting useful information from large online datasets, for example using [social media data](https://www.sciencedirect.com/science/article/abs/pii/S2212041617301559) to understand how people use and appreciate parks and other outdoor spaces, or analysing the text of [historical books](https://link.springer.com/article/10.1007/s10531-013-0555-8) to understand trends in interest in different environmental issues. I have also written methods for quantifying structural parameters of vegetation using images from online panoramic photograph datasets.
+
+![](images/ge.png){fig-alt="ge" fig-align="center" width="90%"}
+
+*Processing of panoramic fisheye photographs to model shade provision. From [Richards and Edwards 2017](https://www.sciencedirect.com/science/article/abs/pii/S1470160X17300341)*

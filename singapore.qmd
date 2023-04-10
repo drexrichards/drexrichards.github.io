@@ -1,0 +1,19 @@
+---
+title: "Natural Capital Singapore"
+---
+
+
+I lived in Singapore for 6 years, working at [NUS](https://fass.nus.edu.sg/geog/) and the [Singapore-ETH Centre](https://sec.ethz.ch/). During this time I had several projects about urban ecosystems and ecosystem services in the city. The ETH research centre in Singapore aims to cross disciplinary boundaries and produce transformative research that can be translated to inform urban planning and design. In addition to academic outputs, we also produced several resources for practice, including the design guideline; [Ecosystem services in urban landscapes - Benefits of tropical urban vegetation](https://ethz.ch/content/dam/ethz/special-interest/dual/fcl-dam/doc/LR_FCL_Benefits_of_Tropical_Urban_Vegetation_050820.pdf). 
+
+I was also a Principal Investigator for Natural Capital Singapore - the first national assessment of ecosystems and ecosystem services. We quantified more than 10 types of benefits that people gain from nature in the city, and produced an interactive map to visualise these findings. The research findings are also available as a [software package](https://github.com/drexrichards/ncs2020) for R, that allows users to evaluate the performance of existing urban landscapes and [new designs](https://figshare.com/articles/software/NCS2020_An_R_package_for_modelling_urban_ecosystem_service_provision_in_Singapore/13339055).
+
+```{=html}
+<style>.embed-container {position: relative; padding-bottom: 80%; height: 0; max-width: 100%;} .embed-container iframe, .embed-container object, .embed-container iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;} small{position: absolute; z-index: 40; bottom: 0; margin-bottom: -15px;}</style>
+```
+::: embed-container
+<iframe width="600" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="Ecosystems" src="https://egregis.maps.arcgis.com/apps/webappviewer/index.html?id=24cac55eb3e54caca18847c856b69ae2">
+
+</iframe>
+:::
+
+*Map layers describing ecosystem service provision in Singapore, created as part of Natural Capital Singapore. Credit: Leon Gaw*
