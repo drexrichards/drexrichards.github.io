@@ -131,7 +131,7 @@ Tree canopy height is described in metres above the ground surface.
 
 #### Patch size
 
-Patch size is described in hectares.
+Patch size is described in hectares. Only patches of urban ecosystem not connected to the rural-urban boundary are included.
 
 #### Connectedness
 
@@ -142,7 +142,7 @@ Connectedness to the rural-urban boundary is described as a binary variable. Cel
 Urban ecosystem spatial type is defined as below;
 
 | Raster value | Definition                                                                       |
-|-----------------|-------------------------------------------------------|
+|------------------|------------------------------------------------------|
 | 1            | Disconnected from rural-urban boundary and smaller than 1 ha in patch size.      |
 | 2            | Disconnected from rural-urban boundary and between 1 ha and 10 ha in patch size. |
 | 3            | Disconnected from rural-urban boundary and greater than 10 ha in patch size.     |
