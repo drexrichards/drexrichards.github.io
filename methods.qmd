@@ -2,7 +2,7 @@
 title: "Climate change datasets and methods"
 ---
 
-My research uses interdisciplinary approaches to analyse the relationships between nature and people.
+This page provides a brief description of the source datasets and methods used for all environmental and climate change datasets included in the GenAI platform.
 
 ### Land cover
 
