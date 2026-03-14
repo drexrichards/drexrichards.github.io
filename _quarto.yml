@@ -12,9 +12,22 @@ website:
         text: Research
       - href: 'https://scholar.google.co.uk/citations?user=BxTPh1kAAAAJ&hl=en'
         text: Publications
+      - text: Teaching
+        href: ai-for-ecologists/index.qmd
+        menu:
+          - href: ai-for-ecologists/index.qmd
+            text: "Course home"
+          - href: ai-for-ecologists/session-1-started.qmd
+            text: "Session 1: Overview"
+          - href: ai-for-ecologists/session-2-llms.qmd
+            text: "Session 2: LLMs"
+          - href: ai-for-ecologists/session-3-chatbots.qmd
+            text: "Session 3: Chatbots"
+          - href: ai-for-ecologists/session-4-chatbots-continued.qmd
+            text: "Session 4: Chatbots continued"
       - href: gue.qmd
         text: Global urban ecosystems
-    left: 
+    left:
       - icon: github
         href: https://github.com/drexrichards
       - icon: twitter

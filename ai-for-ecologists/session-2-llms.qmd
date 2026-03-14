@@ -1,0 +1,260 @@
+---
+title: "Session 2: LLMs"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+execute:
+  warning: false
+  message: false
+---
+
+## Overview
+
+In this session we introduce large language models (LLMs) and explore how they can be used in ecological and environmental applications. We begin by accessing commercial and open-source models, then move on to repeated prompting, model comparison, and a press release example based on a scientific paper.
+
+[Download the R script](files/session-2-llms.R)
+
+## Packages
+
+```{r}
+#| eval: true
+#| echo: false
+require(ellmer)
+require(ollamar)
+library(pdftools)
+```
+
+## 1. Accessing the OpenAI API
+
+We are going to use the `ellmer` package to access LLMs. First we will use a commercial model provided by OpenAI and ask for an opinion about New Zealand's sustainability.
+
+To access an OpenAI model, you will need an API key. A safe way to do this is to set it outside the script as an environment variable.
+
+Example:
+
+```{r}
+#| eval: false
+Sys.setenv(OPENAI_API_KEY = "insert your key here")
+```
+
+We can then open a chat using the `chat_openai()` function and send a question to the model.
+
+```{r}
+#| eval: true
+#| echo: true
+newchat <- chat_openai(
+  model = "gpt-4o",
+  system_prompt = "You are an expert on global sustainability."
+)
+
+res <- newchat$chat(
+  "How sustainable is New Zealand's economy?",
+  echo = "none"
+)
+
+print(res)
+```
+
+## 2. Accessing an open-source local model
+
+We can also try an open-source alternative using the `ollamar` package. This requires a little more setup because we first need to install a local model.
+
+```{r}
+#| eval: true
+#| echo: true
+list_models()
+```
+
+Let's install a really tiny one so that it can run quickly on a normal laptop.
+
+```{r}
+#| eval: true
+#| echo: true
+pull("tinyllama:1.1b")
+```
+
+Once a model has been installed, we can access it in a similar way to the OpenAI model.
+
+```{r}
+#| eval: true
+#| echo: true
+newchat <- chat_ollama(
+  model = "tinyllama:1.1b",
+  system_prompt = "You are an expert on global sustainability."
+)
+
+res <- newchat$chat(
+  "How sustainable is New Zealand's economy?",
+  echo = "none"
+)
+
+print(res)
+```
+
+## 3. Asking a series of questions
+
+In environmental social science we may be interested in asking land use questions to virtual "agents". This is increasingly common in simulation studies and agent-based modelling.
+
+Here we consider a situation where a farmer might change part of their farm from sheep farming to native forestry. Whether or not the farmer plants trees may depend on the size of the financial incentive available.
+
+```{r}
+#| eval: true
+#| echo: false
+dollars <- seq(0,500, by = 40)
+
+agentq <- data.frame(
+  dollars = dollars,
+  chatgpt = NA,
+  open = NA
+)
+
+systemtext <- "You are a New Zealand sheep farmer making a land use decision."
+
+qulist <- paste0(
+  "You are a sheep farmer in New Zealand, with 150 hectares of land. ",
+  "You make an average profit of $438 per hectare from farming per year. ",
+  "You are making a decision about whether to plant native trees on your land instead of farming sheep next year. ",
+  "The cost of planting native trees is $100 per hectare and you would lose the annual profit from sheep farming. ",
+  "The government has offered to pay you $",
+  dollars,
+  " per hectare year if you plant the native trees. Please make this decision while thinking about your livelihood. ",
+  "Please choose how many hectares of land to convert to native trees by indicating the number of hectares. ",
+  "Do not provide any other text or response, only a number between 0 and 150 indicating the number of hectares."
+)
+```
+
+Next we send these prompts to the OpenAI model.
+
+```{r}
+#| eval: true
+#| echo: false
+for (j in 1:length(qulist)) {
+
+  farmerchat <- chat_openai(
+    model = "gpt-4o",
+    system_prompt = systemtext
+  )
+
+  res <- farmerchat$chat(qulist[j], echo = "none")
+  agentq[j,2] <- as.numeric(res)
+}
+```
+
+If the responses are collected successfully, we can plot the results.
+
+```{r}
+#| eval: true
+#| echo: true
+plot(chatgpt ~ dollars,
+     pch = 16,
+     col = "red",
+     data = agentq,
+     xlab = "Incentive ($)",
+     ylab = "Forested area (ha)")
+
+m1 <- glm(cbind(chatgpt,150-chatgpt) ~ dollars,
+          data = agentq,
+          family = "binomial")
+
+lines(1:500,
+      predict(m1,
+              newdata = data.frame(dollars = 1:500),
+              type = "response")*150,
+      lty = 3)
+```
+
+So this is cool! The simulated farmer is making economically-driven decisions, displaying some financial logic. At a low incentive level, they choose to keep their farms in productive agriculture. However, if they are provided with a large enough incentive, they will switch their behaviour and start planting trees. You can read more about this topic in our recent [paper](https://iopscience.iop.org/article/10.1088/2515-7620/ae4cfb).
+
+## 4. Repeating the survey with an open-source model
+
+We can repeat the same loop using a local model.
+
+```{r}
+#| eval: true
+#| echo: false
+for (j in 1:length(qulist)) {
+
+  farmerchat <- chat_ollama(
+    model = "tinyllama:1.1b",
+    system_prompt = systemtext
+  )
+
+  res <- farmerchat$chat(qulist[j], echo = "none")
+  agentq[j,3] <- as.numeric(res)
+}
+```
+
+We can inspect the responses.
+
+```{r}
+#| eval: true
+#| echo: true
+agentq$open
+```
+
+Oh dear, the model has not been able to perform the task properly, likely because it is not complex enough. Let's see what it had to say;
+
+```{r}
+#| eval: true
+#| echo: true
+agentq$open
+res
+```
+
+It is actually trying to provide some logic, but unfortunately has not been able to appreciate the request or particularly the importance of providing a simple numerical response.
+
+## 5. Press release example
+
+LLMs can also be used for science communication. In this example we extract the text from a PDF and ask the model to prepare a press release. You can use any pdf file that you like for this test. I used a recent [paper](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1002/pan3.10622) about the potential of generative AI for climate change adaptation.
+
+```{r}
+#| eval: true
+#| echo: false
+pdf_path <- "C:/Users/RichardsD/OneDrive - MWLR/Documents/GithubRepo/aicourse/Data/Richards et al 2024.pdf"
+papertext <- pdftools::pdf_text(pdf_path)
+```
+
+```{r}
+#| eval: false
+#| echo: true
+pdf_path <- "Data/Richards et al 2024.pdf"
+papertext <- pdftools::pdf_text(pdf_path)
+```
+
+We then ask the model to write a press release.
+
+```{r}
+#| eval: true
+#| echo: true
+newchat <- chat_openai(
+  model = "gpt-4o",
+  system_prompt = "You are an expert in writing press releases for scientific papers."
+)
+
+res <- newchat$chat(
+  paste0(
+    "Please read the following paper and prepare a press release;\n\n",
+    papertext,
+    "\nThe press release should be less than 500 words."
+  ),
+  echo = "none"
+)
+
+print(res)
+```
+
+We can also request a social media post.
+
+```{r}
+#| eval: true
+#| echo: true
+res2 <- newchat$chat(
+  "Thanks, please could you now write a suitable social media post e.g. for LinkedIn?",
+  echo = "none"
+)
+
+print(res2)
+```
+
+In this session we used both commercial and open-source LLMs, explored repeated prompting in a land-use decision example, and used an LLM to help communicate a scientific paper. These examples show both the usefulness of LLMs and some of their practical limitations.

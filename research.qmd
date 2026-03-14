@@ -10,9 +10,22 @@ To adapt to climate change, people must design landscapes that store carbon, mit
 
 ### Generative AI
 
-Generative artificial intelligence (GenAI) holds potential to transform the way that scientific information and advice is provided to decision-makers. However, this untested technology also holds substantial risks, including risks of misuse and misinformation, erroneous guidance, and ethical concerns. My research into GenAI as applied to environmental decision-making combines technology development with ethical and social research methods, to develop guidelines for responsible applications that support environmental outcomes alongside human interests and well-being. I lead the 3-year [Harnessing GenAI](https://www.landcareresearch.co.nz/discover-our-research/environment/ai) MBIE Smart Idea project.
+Generative artificial intelligence (GenAI) holds [potential](https://besjournals-onlinelibrary-wiley-com.landcareresearch.idm.oclc.org/doi/full/10.1002/pan3.10622) to transform the way that scientific information and advice is provided to decision-makers. However, this untested technology also holds substantial risks, including risks of misuse and misinformation, erroneous guidance, and ethical concerns. My research into GenAI as applied to environmental decision-making combines technology development with ethical and social research methods, to develop guidelines for responsible applications that support environmental outcomes alongside human interests and well-being.
 
-![](images/testdalle3-6.png){fig-alt="gen-ai" fig-align="center"}
+#### Chatbots
+
+I lead the 3-year [Harnessing GenAI](https://www.landcareresearch.co.nz/discover-our-research/environment/ai) MBIE Smart Idea project. Through this project we are building prototype GenAI chatbots and automated report pipelines to support farmers, district councils, and urban developers understand the risks of climate change and potential of nature-based solutions in their local area. The quality, risks, and ethics of these GenAI tools are a key concern, and we apply a range of social and ethical research methods to address this. Our recent [publication](https://www-sciencedirect-com.landcareresearch.idm.oclc.org/science/article/pii/S0169204626000393) used expert judgement to assess the quality of GenAI urban ecological reports, finding substantial human oversight was still required.
+
+![](images/genai-platform-v1.png){fig-alt="gen-ai-portal" fig-align="center"} *Prototype platform to support climate change adaptation. View a test version [online here](https://drexrichards.shinyapps.io/ssi-v1/).*
+
+#### Simulated human decisions
+
+GenAI holds potential to add human-like realism into simulations of future global environmental change. Our recent [paper](https://iopscience.iop.org/article/10.1088/2515-7620/ae4cfb) demonstrates potential for this "simulated cognitive empathy" to improve our understanding of land use change and complex socio-environmental systems across diverse settings. We are working on future applications including agent-based modelling and synthetic populations of survey respondents.
+
+#### Image generation
+Images and videos created by GenAI hold great potential for use in research, for example in environmental economics [choice experiments](https://figshare.com/articles/poster/Newsletters_from_the_Generative_Artificial_Intelligence_for_climate_change_adaptation_research_project/31396194?file=62105010), or to communicate how future climate change or rewilding scenarios might look to key stakeholders. Simultaneously, GenAI images may be misused to miscommunicate or misinform environmental issues and decision-makers. Our research aims to improve the ecological accuracy of GenAI images, test their utility with potential end-users, and recommend approaches to ensure reliable and responsible use. 
+
+![](images/genai-image-examples.png){fig-alt="gen-ai-portal" fig-align="center"} *Example GenAI-created images. Left = subliminal message to support climate change action. Right = urban ecological restoration scenario visualisation.*
 
 ### Urban ecosystems
 
