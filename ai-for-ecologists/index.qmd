@@ -26,7 +26,8 @@ This short course introduces ecologists and environental scientists to modern AI
 Short tutorials for understanding how to run ecosystem services models for high-resolution datasets, including LiDAR-derived vegetation height and digital elevation model datasets. The tutorials focus on the [hbrc](https://github.com/manaakiwhenua/hbrc) package for R. The course materials can be downloaded [here](files/intro-hbrc-v3.pdf).
 
 ## Guest lectures
-
 Recent guest lectures include: 
+
 *Principles of Ecology for Design*. Experimentación y Exploración Proyectual 2. Catholic University of Argentina in Buenos Aires. [Download the slides](files/DRR-061025-CUABA.pdf).
+
 *Ecosystem services for landscape planning and design*. Nanjing Agricultural University. [Download the slides](files/DRR-080725-NAU.pdf).
