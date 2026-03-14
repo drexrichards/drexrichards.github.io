@@ -55,7 +55,7 @@ It is a good idea to keep all course materials together in one project folder.
 
 For example, you might create a folder structure like this:
 
-```text
+```{text}
 AIcourse/
   Data/
   Scripts/
@@ -78,7 +78,7 @@ First, load the ollamar package:
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
 library(ollamar)
 ```
 
@@ -86,7 +86,7 @@ We can then ask Ollama which models are currently installed on the system.
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
 list_models()
 ```
 
@@ -94,14 +94,16 @@ If Ollama is installed and running correctly, this command should return a list 
 
 For example, the output might look something like this:
 
+```{text}
 name              size
 tinyllama:1.1b    637 MB
+```
 
 If no models are listed yet, we can download one directly from R. A small model that runs on most laptops is TinyLlama.
 
 ```{r}
 #| eval: false
-#| echo: false
+#| echo: true
 pull("tinyllama:1.1b")
 ```
 This will download the model to your computer. In Session 2, we will interact with the model.
@@ -201,10 +203,6 @@ This helps avoid accidentally sharing your key in scripts or on GitHub.
 - Do not paste it into code that you plan to share publicly.
 - Do not upload it to GitHub.
 - API use may incur costs depending on the model and usage.
-
-Example screenshot of the OpenAI Platform dashboard or API key page:
-
-![](images/session1-openai-dashboard.png)
 
 ## 8. Checklist
 
