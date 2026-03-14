@@ -235,7 +235,7 @@
     "href": "ai-for-ecologists/index.html#guest-lectures",
     "title": "Teaching",
     "section": "Guest lectures",
-    "text": "Guest lectures\nRecent guest lectures include: Principles of Ecology for Design. Experimentación y Exploración Proyectual 2. Catholic University of Argentina in Buenos Aires. Download the slides. Ecosystem services for landscape planning and design. Nanjing Agricultural University. Download the slides."
+    "text": "Guest lectures\nRecent guest lectures include:\nPrinciples of Ecology for Design. Experimentación y Exploración Proyectual 2. Catholic University of Argentina in Buenos Aires. Download the slides.\nEcosystem services for landscape planning and design. Nanjing Agricultural University. Download the slides."
   },
   {
     "objectID": "ai-for-ecologists/session-1-started.html",
@@ -263,14 +263,14 @@
     "href": "ai-for-ecologists/session-1-started.html#create-a-course-project-folder",
     "title": "Session 1: Getting started",
     "section": "2. Create a course project folder",
-    "text": "2. Create a course project folder\nIt is a good idea to keep all course materials together in one project folder.\nFor example, you might create a folder structure like this:\nAIcourse/\n  Data/\n  Scripts/\n  www/\nThis makes it easier to keep track of scripts, datasets, PDFs, and any images used in Shiny apps.\nIf you are using RStudio, you may also want to create an RStudio Project for this folder."
+    "text": "2. Create a course project folder\nIt is a good idea to keep all course materials together in one project folder.\nFor example, you might create a folder structure like this:\n\nAIcourse/\n  Data/\n  Scripts/\n  www/\n\nThis makes it easier to keep track of scripts, datasets, PDFs, and any images used in Shiny apps.\nIf you are using RStudio, you may also want to create an RStudio Project for this folder."
   },
   {
     "objectID": "ai-for-ecologists/session-1-started.html#install-ollama",
     "href": "ai-for-ecologists/session-1-started.html#install-ollama",
     "title": "Session 1: Getting started",
     "section": "3. Install Ollama",
-    "text": "3. Install Ollama\nSome of the course examples use local open-source language models. We will run these using Ollama.\nInstall Ollama for your operating system and then open a terminal or command prompt.\nBefore moving on, it is useful to check that R can communicate with Ollama.\nFirst, load the ollamar package:\nWe can then ask Ollama which models are currently installed on the system.\nIf Ollama is installed and running correctly, this command should return a list of the locally available models.\nFor example, the output might look something like this:\nname size tinyllama:1.1b 637 MB\nIf no models are listed yet, we can download one directly from R. A small model that runs on most laptops is TinyLlama.\nThis will download the model to your computer. In Session 2, we will interact with the model."
+    "text": "3. Install Ollama\nSome of the course examples use local open-source language models. We will run these using Ollama.\nInstall Ollama for your operating system and then open a terminal or command prompt.\nBefore moving on, it is useful to check that R can communicate with Ollama.\nFirst, load the ollamar package:\n\nlibrary(ollamar)\n\nWe can then ask Ollama which models are currently installed on the system.\n\nlist_models()\n\nIf Ollama is installed and running correctly, this command should return a list of the locally available models.\nFor example, the output might look something like this:\n\nname              size\ntinyllama:1.1b    637 MB\n\nIf no models are listed yet, we can download one directly from R. A small model that runs on most laptops is TinyLlama.\n\npull(\"tinyllama:1.1b\")\n\nThis will download the model to your computer. In Session 2, we will interact with the model."
   },
   {
     "objectID": "ai-for-ecologists/session-1-started.html#install-the-required-r-packages",
@@ -298,7 +298,7 @@
     "href": "ai-for-ecologists/session-1-started.html#setting-up-an-openai-api-account",
     "title": "Session 1: Getting started",
     "section": "7. Setting up an OpenAI API account",
-    "text": "7. Setting up an OpenAI API account\nSome of the course examples use OpenAI models. To use these, you will need an OpenAI API account and an API key. If you prefer not to use OpenAI, that is completely OK and very understandable. You may use any Generative AI provider, as long as they work with the R package ellmer. A full explanation of useable platforms can be found in the ellmer documentation.\nThe general process is:\n\nCreate an OpenAI Platform account here.\nAdd billing details if required.\nCreate an API key.\nKeep the API key private.\nLoad the key into R using an environment variable.\n\nA simple example in R is:\n\nSys.setenv(OPENAI_API_KEY = \"your_key_here\")\n\nA safer long-term approach is to store the key outside your script, for example in an .Renviron file.\nFor example:\n\nOPENAI_API_KEY=your_key_here\n\nThis helps avoid accidentally sharing your key in scripts or on GitHub.\n\nImportant notes about API keys\n\nTreat your API key like a password.\nDo not paste it into code that you plan to share publicly.\nDo not upload it to GitHub.\nAPI use may incur costs depending on the model and usage.\n\nExample screenshot of the OpenAI Platform dashboard or API key page:"
+    "text": "7. Setting up an OpenAI API account\nSome of the course examples use OpenAI models. To use these, you will need an OpenAI API account and an API key. If you prefer not to use OpenAI, that is completely OK and very understandable. You may use any Generative AI provider, as long as they work with the R package ellmer. A full explanation of useable platforms can be found in the ellmer documentation.\nThe general process is:\n\nCreate an OpenAI Platform account here.\nAdd billing details if required.\nCreate an API key.\nKeep the API key private.\nLoad the key into R using an environment variable.\n\nA simple example in R is:\n\nSys.setenv(OPENAI_API_KEY = \"your_key_here\")\n\nA safer long-term approach is to store the key outside your script, for example in an .Renviron file.\nFor example:\n\nOPENAI_API_KEY=your_key_here\n\nThis helps avoid accidentally sharing your key in scripts or on GitHub.\n\nImportant notes about API keys\n\nTreat your API key like a password.\nDo not paste it into code that you plan to share publicly.\nDo not upload it to GitHub.\nAPI use may incur costs depending on the model and usage."
   },
   {
     "objectID": "ai-for-ecologists/session-1-started.html#checklist",
