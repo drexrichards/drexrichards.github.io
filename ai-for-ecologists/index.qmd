@@ -6,11 +6,12 @@ My teaching focuses on building practical skills for analysing complex environme
 
 ![](images/presenting.png)
 
+
 ## Introduction to AI for sustainability science
 
 This short course introduces environmental and sustainability scientists to modern AI tools, with a focus on large language models. It is aimed at people who are familiar with the R programming language, but no detailed background knowledge of AI is required. The course focuses on using and understanding the limitations of a range of Generative AI tools and their applications to topics like simulating human land-use decisions, summarising literature, developing retrieval augmented generation (RAG) systems, and building simple chatbots. Recorded presentations and interactive coding sessions will be available in future.
 
--   [Session 1: Overview and getting set up](session-1-started.qmd).Coming soon as a recorded lecture.
+-   [Session 1: Overview and getting set up](session-1-started.qmd). Coming soon as a recorded lecture.
 
 -   [Session 2: Large Language Models](session-2-llms.qmd)\
     Introduction to LLMs and simple prompting workflows in R. [Download the R script](files/session-2-llms.R)
@@ -26,9 +27,8 @@ I made a simple tool to explore how background prompting can result in large lan
 
 ![](images/promptcompare.png)
 
-[Download an R script here to create your own version of the Shiny App](files/prompt-compare.R), or get in touch. 
+[Download an R script here](files/prompt-compare.R) to create your own version of the Shiny App, or get in touch. 
 
-![](images/presenting.png)
 
 ## Modelling ecosystem services using R
 
