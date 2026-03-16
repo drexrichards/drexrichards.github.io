@@ -211,7 +211,7 @@ LLMs can also be used for science communication. In this example we extract the 
 ```{r}
 #| eval: true
 #| echo: false
-pdf_path <- "C:/Users/RichardsD/OneDrive - MWLR/Documents/GithubRepo/aicourse/Data/Richards et al 2024.pdf"
+pdf_path <- "C:/Users/RichardsD/OneDrive - MWLR/Documents/GithubRepo/aicourse/Richards et al 2024.pdf"
 papertext <- pdftools::pdf_text(pdf_path)
 ```
 

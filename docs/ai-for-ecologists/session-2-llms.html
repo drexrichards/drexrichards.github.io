@@ -149,6 +149,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../ai-for-ecologists/index.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../gue.html"> 
 <span class="menu-text">Global urban ecosystems</span></a>
   </li>  
@@ -203,6 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
 <p>In this session we introduce large language models (LLMs) and explore how they can be used in ecological and environmental applications. We begin by accessing commercial and open-source models, then move on to repeated prompting, model comparison, and a press release example based on a scientific paper.</p>
+<p><a href="files/session-2-llms.R">Download the R script</a></p>
 </section>
 <section id="packages" class="level2">
 <h2 class="anchored" data-anchor-id="packages">Packages</h2>
@@ -229,52 +234,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>New Zealand's economy is considered relatively sustainable, but like all 
-countries, it faces both opportunities and challenges in balancing economic 
-growth with environmental and social sustainability. Here are some key aspects 
-to consider when evaluating New Zealand's sustainability:
+<pre><code>New Zealand's economy has several sustainable features, but it also faces 
+challenges that need continued attention to ensure long-term sustainability. 
+Here's an overview of various aspects of sustainability within New Zealand's 
+economy:
 
-1. **Renewable Energy**: New Zealand has a high reliance on renewable energy 
-sources, particularly hydroelectricity, which accounts for a significant 
-portion of its electricity generation. This has helped reduce the country's 
-carbon emissions from the energy sector.
+1. **Renewable Energy**: New Zealand is a leader in renewable energy, with a 
+significant proportion of its electricity generated from renewable sources, 
+particularly hydropower. In 2020, about 83% of its electricity was generated 
+from renewable sources. The country is also investing in wind and solar energy 
+to further increase its renewable energy capacity.
 
-2. **Agriculture**: Agriculture, particularly dairy farming, is a major 
-component of New Zealand's economy. The sector has been criticized for its 
-environmental impact, including water pollution and methane emissions. However,
-efforts are underway to implement more sustainable practices, such as precision
-farming and improved waste management.
+2. **Agriculture**: Agriculture is a major part of New Zealand's economy, 
+particularly dairy, meat, and wine production. While the sector is vital for 
+the economy, it poses sustainability challenges. Livestock farming contributes 
+significantly to greenhouse gas emissions, particularly methane. New Zealand 
+has been working on reducing these emissions through research into sustainable 
+farming practices and technology.
 
-3. **Biodiversity**: New Zealand is known for its unique biodiversity, and 
-conservation efforts are ongoing to protect native species and habitats. There 
-are challenges related to invasive species, habitat destruction, and climate 
-change, which threaten this biodiversity.
+3. **Biodiversity and Natural Resources**: New Zealand is rich in biodiversity 
+and natural resources, which are essential for tourism and the economy. 
+However, there are concerns about the impact of economic activities on natural 
+habitats and biodiversity loss. Conservation efforts are ongoing, aimed at 
+protecting native species and managing invasive species that threaten the 
+ecosystem.
 
-4. **Tourism**: Tourism is another important economic sector for New Zealand, 
-and it is heavily based on its natural landscapes and biodiversity. Sustainable
-tourism practices are promoted to minimize environmental impact while 
-maximizing economic benefits.
+4. **Tourism**: Tourism is a significant part of New Zealand’s economy, and the
+government is focusing on sustainable tourism practices. These include 
+minimizing environmental impact, promoting eco-friendly travel, and ensuring 
+that tourism benefits local communities. The COVID-19 pandemic highlighted the 
+need for a more resilient and sustainable tourism sector.
 
-5. **Policy and Governance**: The New Zealand government has committed to 
-sustainability through various initiatives, such as the Zero Carbon Act, which 
-sets a framework for reducing greenhouse gas emissions and promoting resilience
-to climate change. The government has also focused on the Wellbeing Budget, 
-which includes environmental, health, and community outcomes as key performance
-indicators, beyond just GDP growth.
+5. **Climate Change Policies**: New Zealand has committed to various 
+international climate agreements and has set targets to reduce emissions. The 
+Climate Change Response (Zero Carbon) Amendment Act aims for carbon neutrality 
+by 2050, excluding biological methane. The government is developing policies to
+transition to a low-carbon economy, including emissions trading schemes and 
+promoting electric vehicles.
 
-6. **Challenges**: New Zealand faces challenges typical to island nations, such
-as vulnerability to climate change and reliance on imports for many goods. 
-Additionally, balancing economic growth with environmental protection remains a
-continuous struggle.
+6. **Economic Diversification and Innovation**: Diversification of the economy 
+and investment in innovation are crucial for sustainability. New Zealand is 
+focusing on sectors like technology, education, and creative industries to 
+reduce reliance on traditional sectors like agriculture and tourism.
 
-7. **Innovation and Technology**: Investment in technological advancements and 
-innovation, such as sustainable agriculture technologies, renewable energy 
-development, and conservation tools, are helping to advance sustainable 
-practices across various sectors.
+7. **Social Sustainability**: Ensuring economic growth that provides equitable 
+opportunities and benefits across the population is vital. New Zealand 
+addresses social sustainability through policies aimed at improving housing, 
+healthcare, and education, although challenges remain, including addressing 
+income inequality and affordable housing shortages.
 
-Overall, New Zealand makes significant efforts towards sustainability, but like
-all countries, it must continuously adapt and improve its practices to address 
-existing and emerging challenges.</code></pre>
+Overall, New Zealand's economy demonstrates a commitment to sustainability 
+through renewable energy and environmental policies. However, ongoing 
+challenges, particularly in reducing agricultural emissions and balancing 
+economic growth with environmental preservation, require continued innovation 
+and policy development. Sustainable practices in all sectors will be crucial 
+for the long-term resilience of New Zealand's economy.</code></pre>
 </div>
 </div>
 </section>
@@ -295,7 +309,7 @@ existing and emerging challenges.</code></pre>
 2 2025-11-12T08:27:53
 3 2026-03-13T09:44:42
 4 2026-03-13T09:44:43
-5 2026-03-13T12:05:25</code></pre>
+5 2026-03-16T21:27:26</code></pre>
 </div>
 </div>
 <p>Let’s install a really tiny one so that it can run quickly on a normal laptop.</p>
@@ -323,24 +337,26 @@ Body: In memory (849 bytes)</code></pre>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>New Zealand has a relatively well-established economy and is considered to be 
-moderately sustainable. The country's economy is known for its high per capita 
-GDP levels relative to its population size, in line with the country's low 
-emissions. The country's economy has been able to diversify from the primary 
-sector, which contributes only about 20% of its GDP but employs most of its 
-population, to other sectors, particularly tourism and technology. 
+<pre><code>New Zealand's economy has been rated as "sustainable" by the International 
+Monetary Fund (IMF) in two of the past five years. The IMF classification 
+involves assessing the country's economy's resilience to shocks that can have 
+long-lasting and deleterious effects.
 
-New Zealand has established policies that promote environmentally friendly 
-practices, such as the Renewable Energy Target, which aims to increase the use 
-of renewable energy sources, and the Zero Carbon Bill, which aims to 
-decarbonize the country by 2050. Moreover, the country has one of the most 
-advanced waste management and recycling systems globally. These policies have 
-helped New Zealand to minimize the environmental impacts of its economy, 
-leading to a sustainable economy, with little carbon footprint, and a low 
-pollution impact, in line with the Paris Agreement.
+In 2018, the IMF classified New Zealand as "sustainable," a designation that 
+acknowledges the country's fiscal and monetary stability, low public debt, 
+strong investor confidence, and a balanced macroeconomic system. Some of the 
+factors that led to this assessment were the country's relatively low interest 
+rates, low inflation, and stable currency. In contrast, the IMF noted that 
+while New Zealand's private sector debt-to-GDP ratio is higher than the global 
+median, its level is still below most developed countries.
 
-Overall, while New Zealand's economy is not entirely sustainable, it is 
-considered to be modestly sustainable in comparison to other countries.</code></pre>
+The IMF also noted that New Zealand's macroeconomic framework seems well-suited
+to accommodating growth, inflation, and a stable currency even with uncertainty
+about the 2017-2019 mining tax. The tax was initially intended to fund 
+infrastructure projects to aid economic growth, but New Zealand has had to 
+delay some infrastructure projects as a result. Overall, New Zealand's economy 
+is described as having a strong fiscal and monetary stance, while the country's
+overall growth outlook remains relatively stable.</code></pre>
 </div>
 </div>
 </section>
@@ -375,7 +391,7 @@ considered to be modestly sustainable in comparison to other countries.</code></
 </div>
 </div>
 </div>
-<p>So this is cool! The simulated farmer is making economically-driven decisions, displaying some financial logic. At a low incentive level, they choose to keep their farms in productive agriculture. However, if they are provided with a large enough incentive, they will switch their behaviour and start planting trees. You can read more about this topic in our recent (paper)[https://iopscience.iop.org/article/10.1088/2515-7620/ae4cfb].</p>
+<p>So this is cool! The simulated farmer is making economically-driven decisions, displaying some financial logic. At a low incentive level, they choose to keep their farms in productive agriculture. However, if they are provided with a large enough incentive, they will switch their behaviour and start planting trees. You can read more about this topic in our recent <a href="https://iopscience.iop.org/article/10.1088/2515-7620/ae4cfb">paper</a>.</p>
 </section>
 <section id="repeating-the-survey-with-an-open-source-model" class="level2">
 <h2 class="anchored" data-anchor-id="repeating-the-survey-with-an-open-source-model">4. Repeating the survey with an open-source model</h2>
@@ -384,39 +400,29 @@ considered to be modestly sustainable in comparison to other countries.</code></
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>agentq<span class="sc">$</span>open</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] NA NA NA  0 NA NA NA NA NA NA NA NA NA</code></pre>
+<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA</code></pre>
 </div>
 </div>
 <p>Oh dear, the model has not been able to perform the task properly, likely because it is not complex enough. Let’s see what it had to say;</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>agentq<span class="sc">$</span>open</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] NA NA NA  0 NA NA NA NA NA NA NA NA NA</code></pre>
+<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>res</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Number of hectares: [insert range of numbers between 0 and 150]
-
-Profit ($) per hectare:
-- [insert minimum ($) profit]
-- [insert maximum ($) profit]
-
-Conversion to native trees:
-- [insert number of hectares]
-- [insert number of hectares]
-
-Live-on decision:
-- [insert live-on decision]
-- [insert yes/no/definitely/not sure]</code></pre>
+<pre><code>Please provide your decision regarding the land use for the upcoming year.
+[Insert number of hectares desired to be converted to natives trees]
+Have a good life.</code></pre>
 </div>
 </div>
-<p>It is actually providing some logic, but unfortunately has not been able to appreciate the importance in the prompt of providing a simple response. As we instructed: “Do not provide any other text or response, only a number between 0 and 150 indicating the number of hectares.”</p>
+<p>It is actually trying to provide some logic, but unfortunately has not been able to appreciate the request or particularly the importance of providing a simple numerical response.</p>
 </section>
 <section id="press-release-example" class="level2">
 <h2 class="anchored" data-anchor-id="press-release-example">5. Press release example</h2>
-<p>LLMs can also be used for science communication. In this example we extract the text from a PDF and ask the model to prepare a press release.</p>
+<p>LLMs can also be used for science communication. In this example we extract the text from a PDF and ask the model to prepare a press release. You can use any pdf file that you like for this test. I used a recent <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1002/pan3.10622">paper</a> about the potential of generative AI for climate change adaptation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pdf_path <span class="ot">&lt;-</span> <span class="st">"C:/Users/RichardsD/OneDrive - MWLR/Documents/GithubRepo/aicourse/Data/Richards et al 2024.pdf"</span></span>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pdf_path <span class="ot">&lt;-</span> <span class="st">"Data/Richards et al 2024.pdf"</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>papertext <span class="ot">&lt;-</span> pdftools<span class="sc">::</span><span class="fu">pdf_text</span>(pdf_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We then ask the model to write a press release.</p>
@@ -439,78 +445,74 @@ Live-on decision:
 <div class="cell-output cell-output-stdout">
 <pre><code>**FOR IMMEDIATE RELEASE**
 
-**Innovative Study Explores the Role of Generative AI in Advancing Nature-Based
-Solutions**
+**Revolutionizing Climate Action: The Untapped Carbon Potential of Small Tree 
+Patches in Aotearoa-New Zealand's Grasslands**
 
-**Lincoln, New Zealand—February 2024:** A groundbreaking study by researchers 
-at Manaaki Whenua–Landcare Research, the National University of Singapore, and 
-Université Grenoble Alpes-CNRS-Université Savoie Mont Blanc has brought to 
-light the transformative potential of generative artificial intelligence 
-(GenAI) in supporting nature-based solutions (NbS). The research, recently 
-published in the journal "People and Nature," highlights how this cutting-edge 
-technology can enhance the communication and implementation of ecological 
-strategies in response to the global biodiversity and climate crises.
+*Lincoln, New Zealand – November 22, 2024* – Groundbreaking research led by 
+Manaaki Whenua – Landcare Research scientists, published today in the journal 
+Climate Policy, has revealed the significant yet overlooked role of small tree 
+patches in carbon sequestration efforts across Aotearoa-New Zealand's grassland
+landscapes. Conducted by a team including Daniel Richards, Kara Allen, and 
+David Whitehead, this study emphasizes the transformative potential of these 
+small ecosystems as a strategic component in global climate mitigation efforts.
 
-As society faces escalating environmental challenges, the adoption of NbS that 
-leverage natural processes is increasingly critical. However, ensuring 
-effective communication of scientific information about NbS benefits and 
-suitability is essential for successful implementation. This study suggests 
-that GenAI could automate and scale up these communication efforts, making 
-detailed, context-specific ecological information accessible to diverse 
-stakeholder groups, including farmers, conservationists, and policymakers.
+Amid mounting ecological crises and climate pledges, the study identifies over 
+1.6 million small tree patches, spread across an estimated 186,000 hectares of 
+grasslands in Aotearoa-New Zealand. These patches, typically less than one 
+hectare in size, could hold between 11.6 to 29.3 million tonnes of aboveground 
+carbon—equivalent to roughly 2.9% to 7.8% of the nation's agricultural 
+emissions. Furthermore, the annual carbon sequestration from these patches 
+ranges between 0.3 million to 0.8 million tonnes, marking them as critical, 
+natural carbon sinks.
 
-The research presents three compelling case studies showcasing the potential 
-applications of GenAI:
+"This research challenges existing paradigms by showcasing the indispensable 
+role of small tree patches—not merely as ecological artifacts but as dynamic 
+carbon absorbers," notes Daniel Richards, the lead author. "Their inclusion in 
+carbon policies could revolutionize current approaches to enhance climate 
+resilience."
 
-1. **Farm Planning Reports:** By synthesizing scientific and land-use data, 
-GenAI produces clear and comprehensive farm-level reports. These can guide 
-farmers in the Mackenzie District of New Zealand towards sustainable land 
-practices, suggesting measures like regenerative grazing and riparian planting 
-to enhance soil health and biodiversity.
+Despite their evident potential, small tree patches are excluded from New 
+Zealand’s national carbon emissions trading scheme (ETS), which primarily 
+focuses on larger forested areas. This oversight represents a missed 
+opportunity both economically, where these patches possess an unrealized market
+value of up to NZ$ 237.6 million annually, and ecologically, given their 
+contribution to biodiversity and ecosystem services.
 
-2. **Interactive Garden Design Guidance:** An AI-driven chatbot effectively 
-engages with homeowners to offer tailored advice on biodiversity-friendly 
-garden designs. This tool not only provides general guidance but also answers 
-specific questions about creating sustainable habitats in urban environments, 
-adapting to local climatic conditions.
+The study highlights the urgent need for policy reevaluation, suggesting 
+significant adjustments to incentivize the protection and establishment of 
+small tree patches. This could include modifications to existing afforestation 
+incentives and carbon valuation methods, providing a dual benefit of 
+agricultural productivity and climate mitigation.
 
-3. **Future Landscape Visualization:** GenAI can generate visualizations of 
-potential future scenarios, aiding in conceptualizing how different land use 
-strategies might alter landscapes. This visual tool helps in communicating the 
-tangible impacts of various NbS and technological interventions, facilitating 
-informed decision-making among stakeholders.
+In addition to carbon storage, these patches offer vital co-benefits such as 
+erosion control, shade for livestock, and biodiversity support, alongside 
+cultural significance within the Te Ao Māori worldview, which emphasizes the 
+interconnectedness of all living things and our responsibility to protect the 
+environment.
 
-While GenAI offers significant promise, the study acknowledges accompanying 
-risks such as potential data bias, misinformation, and privacy concerns. High 
-computational demands leading to increased energy usage also pose environmental
-challenges. To counter these, the researchers advocate for integrated social 
-research to explore ethical considerations, public acceptability, and improve 
-the user experience.
+"We're just beginning to uncover the co-benefits these small patches provide, 
+from supporting diverse ecosystems to enhancing cultural landscapes," explains 
+co-author Nikki Harcourt. "It's time we recognize and integrate them into our 
+environmental and economic frameworks."
 
-“Our study demonstrates how GenAI can revolutionize the way ecological 
-knowledge is disseminated, making it more inclusive and accessible,” said lead 
-author Daniel Richards. “By blending artificial intelligence with human 
-expertise, we can drive forward nature-based solutions crucial for sustainable 
-futures.”
+As global leaders converge for climate talks, this research lays the groundwork
+for a pioneering approach—embracing small tree patches in grassland landscapes 
+as a bedrock for sustainable, scalable carbon management. It heralds a new era 
+where these natural resources are leveraged not only for their climate benefits
+but also to foster a future where economic, ecological, and cultural priorities
+harmoniously align.
 
-This research underscores the importance of embracing technological 
-advancements to support NbS as vital components of climate adaptation 
-strategies. With ongoing development and careful deployment, GenAI could play a
-pivotal role in cultivating resilient ecosystems worldwide.
+For more information, access the full study in Climate Policy or contact Daniel
+Richards at richardsd@landcareresearch.co.nz.
 
-**About Manaaki Whenua–Landcare Research:** As a leading environmental research
-organization in New Zealand, Manaaki Whenua–Landcare Research is dedicated to 
-fostering science that helps sustain New Zealand's rich biodiversity and 
-natural heritage.
-
-For media inquiries, please contact:
+**Media Contact:**
 Daniel Richards  
+Manaaki Whenua – Landcare Research  
 Email: richardsd@landcareresearch.co.nz
 
-**Funding:** This research was supported by the New Zealand Ministry of 
-Business, Innovation, and Employment.
+--- End ---
 
-**###**</code></pre>
+*Please consider the environment before printing this press release.*</code></pre>
 </div>
 </div>
 <p>We can also request a social media post.</p>
@@ -522,23 +524,19 @@ Business, Innovation, and Employment.
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>🌿 Exciting developments in sustainable solutions! Our latest study, published 
-in "People and Nature," explores how generative AI (GenAI) is revolutionizing 
-the implementation and communication of nature-based solutions (NbS).
+<pre><code>🌿 Exciting news for climate action! Our latest research reveals the hidden 
+potential of small tree patches in Aotearoa-New Zealand's grasslands as 
+powerful carbon sinks. These patches could sequester up to 0.8 million tonnes 
+of carbon annually, equivalent to offsetting up to 7.8% of the nation's 
+agricultural emissions. Despite this, they often go unrecognized in current 
+carbon markets. It's time for a policy shift to harness their full potential! 
+🌍💡
 
-From automated farm planning to interactive garden design advice and 
-visualizing future landscapes, GenAI offers innovative ways to tackle the 
-global biodiversity and climate crises. By integrating this cutting-edge 
-technology with human expertise, we can make ecological information more 
-accessible and effective.
+Explore how these small but mighty ecosystems can redefine sustainable 
+practices: [Link to the full article]
 
-🔍 Learn more about how GenAI is shaping sustainable practices for a healthier 
-planet: [Link to Paper]
-
-#Sustainability #ClimateChange #AI #NatureBasedSolutions #Innovation #GenAI 
-#ScienceCommunication
-
-📧 For inquiries, contact: Daniel Richards at Manaaki Whenua–Landcare Research.</code></pre>
+#ClimateAction #CarbonSequestration #Sustainability #Grasslands #PolicyChange 
+#AotearoaNewZealand #ResearchImpact #BiodiversityConservation</code></pre>
 </div>
 </div>
 <p>In this session we used both commercial and open-source LLMs, explored repeated prompting in a land-use decision example, and used an LLM to help communicate a scientific paper. These examples show both the usefulness of LLMs and some of their practical limitations.</p>
